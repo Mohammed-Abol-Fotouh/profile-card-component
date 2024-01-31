@@ -1,0 +1,199 @@
+/* CSS Reset */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+	display: inline-block;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	border: 0;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: "Courier New", Courier, monospace;
+}
+
+/* End CSS Reset */
+
+.container {
+	min-height: 100vh;
+	background-color: #e5e5f7;
+	opacity: 0.8;
+	background-image: radial-gradient(
+		#444cf7 0.8500000000000001px,
+		#e5e5f7 0.8500000000000001px
+	);
+	background-size: 1.7rem 1.7rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.lights-control {
+	margin: 0 auto;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	position: absolute;
+	top: 2rem;
+}
+
+.lights-input {
+	display: none;
+}
+
+.lights-label {
+	width: 4.2rem;
+	height: 2.2rem;
+	border-radius: 1.5rem;
+	background-color: #000;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	padding: 0.3rem 0.4rem;
+}
+
+.lights-label::before {
+	content: "";
+	display: block;
+	width: 1.6rem;
+	height: 1.6rem;
+	border-radius: 50%;
+	background-color: #fff;
+	transition: 0.3s;
+}
+
+.lights-input:checked + .lights-label {
+	background-color: #fff;
+}
+
+.lights-input:checked + .lights-label::before {
+	background-color: #444cf7;
+	transform: translateX(2.1rem);
+}
+
+.card {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	border-radius: 1rem;
+	min-width: 35rem;
+	overflow: hidden;
+	box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.lights {
+	display: none;
+	position: absolute;
+	z-index: 2;
+}
+
+.bulb-red {
+	animation: party 0.5s infinite alternate;
+}
+
+.bulb-yellow {
+	animation: party 0.5s infinite alternate-reverse;
+}
+
+.bulb-green {
+	animation: party 0.5s infinite alternate-reverse;
+}
+
+@keyframes party {
+	0% {
+		fill: red;
+	}
+	33% {
+		fill: yellow;
+	}
+	100% {
+		fill: green;
+	}
+}
+
+.container:has(.lights-input:checked) .lights {
+	display: block;
+}
+.top {
+	height: 10rem;
+	background-color: #e5e5f7;
+	opacity: 0.8;
+	background-image: repeating-radial-gradient(
+			circle at 0 0,
+			transparent 0,
+			#e5e5f7 1rem
+		),
+		repeating-linear-gradient(#444cf755, #444cf7);
+}
+
+.middle {
+	text-align: center;
+}
+
+.img {
+	position: relative;
+	width: 12rem;
+	height: 12rem;
+	border-radius: 50%;
+	margin-top: -6rem;
+	border: 0.4rem solid white;
+	z-index: 1;
+}
+
+.name {
+	font-size: 2.2rem;
+}
+
+.job {
+	font-size: 1.6rem;
+	font-weight: bold;
+}
+
+.bottom {
+	border-top: 0.1rem solid #c4c4c4;
+	margin-top: 3rem;
+	display: flex;
+}
+
+.column {
+	text-align: center;
+	padding: 1.8rem 1.5rem;
+}
+
+.column:not(:last-child) {
+	border-right: 0.2rem solid #c4c4c4;
+}
+
+.icon {
+	width: 2rem;
+	height: 2rem;
+}
+
+.username {
+	font-size: 1.2rem;
+}
